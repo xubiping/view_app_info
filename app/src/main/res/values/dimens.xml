@@ -1,0 +1,8 @@
+<resources  xmlns:android="http://schemas.android.com/apk/res/android">
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="xdimen_marginleft">10dp</dimen>
+    <dimen name="xdimen_marginright">5dp</dimen>
+    <dimen name="xdimen_margintop">10dp</dimen>
+    <dimen name="xdimen_margintop2">20dp</dimen>
+    <dimen name="xdimen_marginbottom">5dp</dimen>
+</resources>

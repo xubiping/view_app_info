@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white"
+    >
+    <ImageView
+        android:id="@+id/iv_app_icon"
+        android:layout_width = "65dp"
+        android:layout_height = "65dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:src="@mipmap/ic_launcher"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width = "wrap_content"
+        android:layout_height = "0dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"
+        app:layout_constraintTop_toTopOf="@id/iv_app_icon"
+        app:layout_constraintLeft_toRightOf="@id/iv_app_icon"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/xdimen_margintop"
+        tools:text="demo"
+        />
+
+    <TextView
+        android:id="@+id/tv_app_packagename"
+        android:layout_width = "wrap_content"
+        android:layout_height = "0dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
+        app:layout_constraintLeft_toRightOf="@id/iv_app_icon"
+        android:layout_marginLeft="@dimen/xdimen_marginleft"
+        android:layout_marginTop="@dimen/xdimen_margintop"
+        tools:text="com.package.tv"
+        />
+    <TextView
+        android:id="@+id/tv_app_versioncode_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/iv_app_icon"
+        app:layout_constraintLeft_toLeftOf="@id/iv_app_icon"
+        android:layout_marginLeft="@dimen/xdimen_marginleft"
+        android:layout_marginTop="@dimen/xdimen_margintop"
+        android:text="版本号:"
+        />
+    <TextView
+        android:id="@+id/tv_app_versioncode"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toTopOf="@id/tv_app_versioncode_dis"
+        app:layout_constraintLeft_toRightOf="@id/tv_app_versioncode_dis"
+        android:layout_marginLeft="@dimen/xdimen_marginleft"
+        tools:text="1"
+        />
+    <TextView
+        android:id="@+id/tv_app_versionname_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_versioncode_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_versioncode_dis"
+        android:layout_marginTop="@dimen/xdimen_margintop"
+        android:text="版本名称:"
+        />
+    <TextView
+        android:id="@+id/tv_app_versionname"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toTopOf="@id/tv_app_versionname_dis"
+        app:layout_constraintLeft_toRightOf="@id/tv_app_versionname_dis"
+        android:layout_marginLeft="@dimen/xdimen_marginleft"
+        tools:text="v1.5.0"
+        />
+    <TextView
+        android:id="@+id/tv_app_path_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_versionname_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_versionname_dis"
+        android:layout_marginTop="@dimen/xdimen_margintop"
+        android:text="路径:"
+        />
+    <TextView
+        android:id="@+id/tv_app_path"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toTopOf="@id/tv_app_path_dis"
+        app:layout_constraintBottom_toBottomOf="@id/tv_app_path_dis"
+        app:layout_constraintLeft_toRightOf="@id/tv_app_path_dis"
+        android:layout_marginLeft="@dimen/xdimen_marginleft"
+        tools:text="data/android"
+        />
+
+    <TextView
+        android:id="@+id/tv_app_fbslmy_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_path_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_path_dis"
+        android:layout_marginTop="@dimen/xdimen_margintop2"
+        android:text="FACEBOOK散列密钥:"
+        />
+    <TextView
+        android:id="@+id/tv_app_fbslmy"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_fbslmy_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_fbslmy_dis"
+        tools:text="DFADFADFADFAD"
+        />
+    <TextView
+        android:id="@+id/tv_app_md5_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_fbslmy"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_fbslmy"
+        android:layout_marginTop="@dimen/xdimen_margintop2"
+        android:text="MD5:"
+        />
+    <TextView
+        android:id="@+id/tv_app_md5"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_md5_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_md5_dis"
+        tools:text="DFADFADFADFAD"
+        />
+
+    <TextView
+        android:id="@+id/tv_app_sha1_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_md5"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_md5"
+        android:layout_marginTop="@dimen/xdimen_margintop2"
+        android:text="SHA1:"
+        />
+    <TextView
+        android:id="@+id/tv_app_sha1"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_sha1_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_sha1_dis"
+        tools:text="DFADFADFADFAD"
+        />
+    <TextView
+        android:id="@+id/tv_app_sha256_dis"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/xcolor_dec_text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_sha1"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_sha1"
+        android:layout_marginTop="@dimen/xdimen_margintop2"
+        android:text="SHA256:"
+        />
+    <TextView
+        android:id="@+id/tv_app_sha256"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_sha256_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_sha256_dis"
+        tools:text="DFADFADFADFDFADFADFADFADDFADFADFADFADDFADFADFADFADDFADFADFADFADDFADFADFADFADAD"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
