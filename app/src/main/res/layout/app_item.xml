@@ -2,10 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/con_item_id"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants"
     >
+    <!--
+    beforeDescendants：viewgroup会优先其子类控件而获取到焦点
+ afterDescendants：viewgroup只有当其子类控件不需要获取焦点时才获取焦点
+ blocksDescendants：viewgroup会覆盖子类控件而直接获得焦点-->
     <ImageView
         android:id="@+id/iv_app_icon"
         android:layout_width = "80dp"
@@ -39,6 +46,7 @@
         app:layout_constraintLeft_toRightOf="@id/tv_app_name"
         android:layout_marginLeft="@dimen/xdimen_marginleft"
         tools:text="vcode:1"
+        android:visibility="gone"
         />
     <TextView
         android:id="@+id/tv_app_versionname"

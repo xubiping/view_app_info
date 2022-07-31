@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:padding="10dp"
     android:background="@color/white"
     >
     <ImageView
@@ -107,10 +107,10 @@
         android:layout_height = "wrap_content"
         android:textSize="16sp"
         android:textColor="@color/purple_700"
-        app:layout_constraintTop_toTopOf="@id/tv_app_path_dis"
-        app:layout_constraintBottom_toBottomOf="@id/tv_app_path_dis"
-        app:layout_constraintLeft_toRightOf="@id/tv_app_path_dis"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_path_dis"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_path_dis"
         android:layout_marginLeft="@dimen/xdimen_marginleft"
+        android:paddingRight="10dp"
         tools:text="data/android"
         />
 
@@ -120,8 +120,8 @@
         android:layout_height = "wrap_content"
         android:textSize="20sp"
         android:textColor="@color/xcolor_dec_text_black"
-        app:layout_constraintTop_toBottomOf="@id/tv_app_path_dis"
-        app:layout_constraintLeft_toLeftOf="@id/tv_app_path_dis"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_path"
+        app:layout_constraintLeft_toLeftOf="@id/tv_app_path"
         android:layout_marginTop="@dimen/xdimen_margintop2"
         android:text="FACEBOOK散列密钥:"
         />
@@ -134,6 +134,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_app_fbslmy_dis"
         app:layout_constraintLeft_toLeftOf="@id/tv_app_fbslmy_dis"
         tools:text="DFADFADFADFAD"
+        android:paddingRight="10dp"
         />
     <TextView
         android:id="@+id/tv_app_md5_dis"
@@ -154,6 +155,7 @@
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toBottomOf="@id/tv_app_md5_dis"
         app:layout_constraintLeft_toLeftOf="@id/tv_app_md5_dis"
+        android:paddingRight="10dp"
         tools:text="DFADFADFADFAD"
         />
 
@@ -176,6 +178,7 @@
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toBottomOf="@id/tv_app_sha1_dis"
         app:layout_constraintLeft_toLeftOf="@id/tv_app_sha1_dis"
+        android:paddingRight="10dp"
         tools:text="DFADFADFADFAD"
         />
     <TextView
@@ -187,6 +190,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_app_sha1"
         app:layout_constraintLeft_toLeftOf="@id/tv_app_sha1"
         android:layout_marginTop="@dimen/xdimen_margintop2"
+        android:paddingRight="10dp"
         android:text="SHA256:"
         />
     <TextView
@@ -197,6 +201,7 @@
         android:textColor="@color/purple_700"
         app:layout_constraintTop_toBottomOf="@id/tv_app_sha256_dis"
         app:layout_constraintLeft_toLeftOf="@id/tv_app_sha256_dis"
+        android:paddingRight="10dp"
         tools:text="DFADFADFADFDFADFADFADFADDFADFADFADFADDFADFADFADFADDFADFADFADFADDFADFADFADFADAD"
         />
 

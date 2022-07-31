@@ -17,8 +17,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.view.app.info.adapter.AppAapter
 import com.view.app.info.databinding.ActivityMainBinding
+import com.view.app.info.dialog.RecycleViewDivider
 import com.view.app.info.init.XAppInfo
 import com.view.app.info.model.AppBean
 import com.view.app.info.utils.SignUtil
@@ -44,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         /**********/
         val myAdapter = AppAapter(appList)
         binding.recyclerView.adapter = myAdapter
+        binding.recyclerView.addItemDecoration(RecycleViewDivider(this,LinearLayoutManager.VERTICAL))
     }
 
     /**
@@ -67,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                 appBean.appVersionCode = packageInfo.versionCode.toString()
                 appBean.appVersionName = packageInfo.versionName
                 appBean.appname = packageInfo.applicationInfo.loadLabel(packageManager).toString()
-                appBean.appPath = applicationContext.packageResourcePath
+                appBean.appPath = packageInfo.applicationInfo.sourceDir
                // SignUtil.getRawSignature(applicationContext,appBean.appname)
                 appBean.md5 = SignUtil.getRawSignatureStr(applicationContext,appBean.appPackageName,SignUtil.SignType.MD5).toString()
                 appBean.sha1 = SignUtil.getRawSignatureStr(applicationContext,appBean.appPackageName,SignUtil.SignType.SHA1).toString()
