@@ -1,9 +1,12 @@
 package com.view.app.info.utils
 
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.view.Gravity
+import android.widget.Toast
 import java.security.MessageDigest
 import java.util.*
 
@@ -20,67 +23,18 @@ object Util {
         }
         return true
     }
-    fun getMD5Signature(context: Context):String{
+    fun copy (context: Context,str:String){
+        try {
+            val cm:ClipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            cm.text = str;
+            toast(context,str)
+        }catch (e:Throwable){
 
-        context?.let {
-            val info = it.packageManager.getPackageInfo(it.packageName,PackageManager.GET_SIGNATURES)
-            val cert = info.signatures[0].toByteArray()
-            val md = MessageDigest.getInstance("MD5")
-            val publicKey = md.digest(cert)
-            val hexString = StringBuffer()
-            for ( i in publicKey.indices){
-                val appendString = Integer.toHexString(0xFF and publicKey[i].toInt()).toUpperCase(
-                    Locale.US)
-                if(appendString.length == 1){
-                    hexString.append("0")
-                }
-                hexString.append(appendString)
-                hexString.append(":")
-            }
-            return hexString.toString()
         }
-        return ""
     }
-    fun getSHA1Signature(context: Context):String{
-
-            context?.let {
-                val info = it.packageManager.getPackageInfo(it.packageName,PackageManager.GET_SIGNATURES)
-                val cert = info.signatures[0].toByteArray()
-                val md = MessageDigest.getInstance("SHA1")
-                val publicKey = md.digest(cert)
-                val hexString = StringBuffer()
-                for ( i in publicKey.indices){
-                    val appendString = Integer.toHexString(0xFF and publicKey[i].toInt()).toUpperCase(
-                        Locale.US)
-                    if(appendString.length == 1){
-                        hexString.append("0")
-                    }
-                    hexString.append(appendString)
-                    hexString.append(":")
-                }
-                return hexString.toString()
-            }
-       return ""
-    }
-    fun getSHA256Signature(context: Context):String{
-
-        context?.let {
-            val info = it.packageManager.getPackageInfo(it.packageName,PackageManager.GET_SIGNATURES)
-            val cert = info.signatures[0].toByteArray()
-            val md = MessageDigest.getInstance("SHA256")
-            val publicKey = md.digest(cert)
-            val hexString = StringBuffer()
-            for ( i in publicKey.indices){
-                val appendString = Integer.toHexString(0xFF and publicKey[i].toInt()).toUpperCase(
-                    Locale.US)
-                if(appendString.length == 1){
-                    hexString.append("0")
-                }
-                hexString.append(appendString)
-                hexString.append(":")
-            }
-            return hexString.toString()
-        }
-        return ""
+    fun toast(context: Context,str:String){
+        val toast = Toast.makeText(context,str,Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.TOP,0,200)
+        toast.show()
     }
 }

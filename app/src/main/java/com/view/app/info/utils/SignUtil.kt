@@ -1,7 +1,6 @@
 package com.view.app.info.utils
 
 import android.content.Context
-import com.view.app.info.test.BaseDialogFragment
 import android.content.pm.PackageManager
 import android.content.pm.Signature
 import android.util.Base64
@@ -11,7 +10,6 @@ import java.lang.StringBuilder
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.*
-import kotlin.Throws
 
 object SignUtil {
 

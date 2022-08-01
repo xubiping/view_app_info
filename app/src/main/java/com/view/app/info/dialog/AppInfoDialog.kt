@@ -1,11 +1,15 @@
 package com.view.app.info.dialog
 
+import android.content.Context
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.view.app.info.R
 import com.view.app.info.model.AppBean
+import com.view.app.info.utils.Util
 
 class AppInfoDialog : BaseDialogFragment1() {
    // override val TAG= "AppInfoDialog"//javaClass.simpleName
@@ -37,6 +41,15 @@ class AppInfoDialog : BaseDialogFragment1() {
          tv_app_md5 = view.findViewById<TextView>(R.id.tv_app_md5)
          tv_app_sha1 = view.findViewById<TextView>(R.id.tv_app_sha1)
          tv_app_sha256 = view.findViewById<TextView>(R.id.tv_app_sha256)
+        textCopy(tv_app_name)
+        textCopy(tv_app_packagename)
+        textCopy(tv_app_versioncode)
+        textCopy(tv_app_versionname)
+        textCopy(tv_app_path)
+        textCopy(tv_app_fbslmy)
+        textCopy(tv_app_md5)
+        textCopy(tv_app_sha1)
+        textCopy(tv_app_sha256)
         initData()
 
     }
@@ -56,6 +69,15 @@ class AppInfoDialog : BaseDialogFragment1() {
         tv_app_md5.text = appBean.md5
         tv_app_sha1.text = appBean.sha1
         tv_app_sha256.text = appBean.sha256
+    }
+    fun textCopy(view: TextView){
+        if(view == null){
+            Util.toast(mContent,"text null")
+            return
+        }
+        view.setOnClickListener {
+            Util.copy(mContent, view.text as String)
+        }
     }
 
 }

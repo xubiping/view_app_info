@@ -55,7 +55,7 @@ abstract class BaseDialogFragment1() : DialogFragment() {
         Log.v(TAG,"onStart ");
         var dmdisplayMetrics:DisplayMetrics = DisplayMetrics()
         requireActivity().windowManager.defaultDisplay.getMetrics(dmdisplayMetrics)
-        val width = (dmdisplayMetrics.widthPixels*0.85).toInt()
+        val width = (dmdisplayMetrics.widthPixels*0.9).toInt()
         val height = (dmdisplayMetrics.heightPixels*0.8).toInt()
         dialog!!.window!!.setLayout(width,height)
         super.onStart()
